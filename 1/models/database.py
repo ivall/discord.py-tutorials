@@ -15,7 +15,7 @@ class Database:
     def cursor(self):
         return self._cursor
 
-    def execute(self, sql):
-        self._cursor.execute(sql)
+    def execute(self, sql, params=None):
+        self._cursor.execute(sql, params)
         self._conn.commit()
         return self._cursor.fetchone()
